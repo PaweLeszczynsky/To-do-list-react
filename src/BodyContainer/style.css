@@ -1,0 +1,8 @@
+.bodyContainer {
+    background-color: rgb(221, 221, 221);
+    display: flex;
+    justify-content: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    height: 100vh;
+}

@@ -1,0 +1,89 @@
+.section__taskList {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    padding: 10px 0;
+    font-weight: 300;
+    word-break: break-word;
+}
+
+.section__taskListItem {
+    margin: 0 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 2px solid rgb(221, 221, 221);
+    padding: 10px 10px;
+}
+
+.section__taskListItem--done {
+    text-decoration: line-through;
+}
+
+.section__taskListItem--hidden {
+    display: none;
+}
+
+.section__taskList__icon {
+    align-items: center;
+    background-color: transparent;
+    transition: transform 1s;
+}
+
+.section__taskList__icon:hover {
+    transform: scale(1.4);
+}
+
+.section__taskList__checkedButton {
+    padding: 5px;
+    background-color: green;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+.section__taskList__deleteTask {
+    padding: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+.section__taskList__deleteTask:hover {
+    background-color: hsl(0, 100%, 30%);
+    cursor: pointer;
+}
+
+.section__taskList__checkedButton:hover {
+    background-color: hsl(120, 100%, 20%);
+    cursor: pointer;
+}
+
+.section__taskList__checkedButton:active {
+    outline: 2px solid black;
+    border-radius: 2px;
+}
+
+.section__taskList__deleteTask:active {
+    outline: 2px solid black;
+    border-radius: 2px;
+}
+
+.section__tasksInteractionButton:disabled {
+    color: grey;
+}
