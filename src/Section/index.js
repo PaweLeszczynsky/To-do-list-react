@@ -1,11 +1,11 @@
 import "./style.css";
-const Section = (props) => (
+const Section = ({ title, extraHeaderContent, body }) => (
     <section className="section">
         <h1 class="section__header section__header--taskList">
-            {props.title}
-            {props.extraHeaderContent}
+            {title}
+            {extraHeaderContent}
         </h1>
-        {props.body}
+        {body}
     </section>
 );
 export default Section;

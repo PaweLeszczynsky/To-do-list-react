@@ -1,7 +1,7 @@
 import "./style.css"
-const MainContainer = (props) => (
+const MainContainer = ({ children }) => (
     <main className="mainSection">
-        {props.children}
+        {children}
     </main>
 );
 export default MainContainer;
