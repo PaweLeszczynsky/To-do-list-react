@@ -4,7 +4,6 @@ import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from "./Header";
 import MainContainer from "./MainContainer";
-import BodyContainer from "./BodyContainer";
 const tasks = [
   { id: 1, content: "Przejść na reacta", status: false },
   { id: 2, content: "Zrobić trening", status: true },
@@ -12,8 +11,6 @@ const tasks = [
 const hideDoneTasks = false;
 function App() {
   return (
-    <BodyContainer>
-
       <MainContainer>
         <Header
           title="Lista zadań"
@@ -28,8 +25,6 @@ function App() {
           extraHeaderContent={<Buttons tasks={tasks} hideDoneTasks={hideDoneTasks} />}
         />
       </MainContainer>
-    </BodyContainer>
-
   );
 }
 
