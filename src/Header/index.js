@@ -1,5 +1,5 @@
 import "./style.css";
 const Header = (props) => (
-    <header className="mainSection__websiteName">{props.title}</header>
+    <header className="headerWebsite">{props.title}</header>
 );
 export default Header;
