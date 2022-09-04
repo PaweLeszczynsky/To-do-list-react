@@ -5,7 +5,7 @@ const Buttons = ({ tasks, hideDoneTasks }) => {
         return null;
     };
     return (
-        <div class="section__interactionButtonsContainer">
+        <div className="section__interactionButtonsContainer">
             <button className="section__tasksInteractionButton">
                 {hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
             </button>
