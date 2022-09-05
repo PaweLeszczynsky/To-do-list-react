@@ -13,7 +13,7 @@ const Buttons = ({ tasks, hideDone, toggleHideDone }) => {
                 {hideDone ? "Pokaż ukończone" : "Ukryj ukończone"}
             </button>
             <button
-                disabled={tasks.every(({ done }) => done)}
+                disabled={tasks.every(({ status }) => status)}
                 className="section__tasksInteractionButton">
                 Ukończ wszystkie
             </button>
