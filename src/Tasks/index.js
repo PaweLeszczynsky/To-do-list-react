@@ -1,6 +1,6 @@
 
 import "./style.css";
-const Tasks = ({ tasks, hideDone }) => (
+const Tasks = ({ tasks, hideDone, removeTask }) => (
     <ul className="section__taskList">
         {tasks.map(task => (
             <li
@@ -18,7 +18,10 @@ const Tasks = ({ tasks, hideDone }) => (
                     }
                 </button>
                 {task.content}
-                <button className="section__taskList__deleteTask">
+                <button
+                    onClick={() => removeTask(task.id)}
+                    className="section__taskList__deleteTask"
+                >
                     <ion-icon class="section__taskList__icon" name="trash-outline"></ion-icon>
                 </button>
             </li>
