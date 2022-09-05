@@ -17,6 +17,14 @@ function App() {
   const removeTask = (id) => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
   };
+  const toggleTaskStatus = (id) => {
+    setTasks(tasks => tasks.map(task => {
+      if (task.id === id) {
+        return { ...task, status: !task.status };
+      };
+      return task;
+    }));
+  };
   return (
     <MainContainer>
       <Header
@@ -33,6 +41,7 @@ function App() {
             tasks={tasks}
             hideDone={hideDone}
             removeTask={removeTask}
+            toggleTaskStatus={toggleTaskStatus}
           />}
         extraHeaderContent={
           <Buttons

@@ -1,6 +1,6 @@
 
 import "./style.css";
-const Tasks = ({ tasks, hideDone, removeTask }) => (
+const Tasks = ({ tasks, hideDone, removeTask, toggleTaskStatus }) => (
     <ul className="section__taskList">
         {tasks.map(task => (
             <li
@@ -11,7 +11,10 @@ const Tasks = ({ tasks, hideDone, removeTask }) => (
                 ${task.status ? "section__taskListItem--done" : ""}
                 `}
             >
-                <button className="section__taskList__checkedButton">
+                <button
+                    onClick={() => toggleTaskStatus(task.id)}
+                    className="section__taskList__checkedButton"
+                >
                     {task.status ?
                         <ion-icon class="section__taskList__icon" name="checkmark-outline"></ion-icon> :
                         ""
