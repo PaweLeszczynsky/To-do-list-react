@@ -1,5 +1,5 @@
 import "./style.css";
-const Buttons = ({ tasks, hideDoneTasks }) => {
+const Buttons = ({ tasks, hideDone }) => {
 
     if (tasks.length === 0) {
         return null;
@@ -7,7 +7,7 @@ const Buttons = ({ tasks, hideDoneTasks }) => {
     return (
         <div className="section__interactionButtonsContainer">
             <button className="section__tasksInteractionButton">
-                {hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
+                {hideDone ? "Pokaż ukończone" : "Ukryj ukończone"}
             </button>
             <button
                 disabled={tasks.every(({ done }) => done)}
