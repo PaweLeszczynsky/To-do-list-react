@@ -1,5 +1,5 @@
 import "./style.css";
-const Header = (props) => (
-    <header className="headerWebsite">{props.title}</header>
+const Header = ({ title }) => (
+    <header className="headerWebsite">{title}</header>
 );
 export default Header;
