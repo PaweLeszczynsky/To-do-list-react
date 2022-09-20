@@ -6,7 +6,7 @@ const Form = ({ addNewTask, focusTaskInput }) => {
   const onInputChange = ({ target }) => { setNewTaskContent(target.value); };
   const onFormSubmit = (event) => {
     event.preventDefault();
-    if (newTaskContent !== "") {
+    if (newTaskContent.trim() !== "") {
       addNewTask(newTaskContent.trim());
     }
     setNewTaskContent("");
