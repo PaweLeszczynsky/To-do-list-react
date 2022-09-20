@@ -1,12 +1,12 @@
 # Task List App
 ## Preview
-![App after add tasks](https://github.com/PaweLeszczynsky/to-do-list-react/blob/main/readme/preview1.png?raw=true)
+![App after add tasks](https://github.com/PaweLeszczynsky/to-do-list-react/blob/main/preview1.png?raw=true)
 
 Link to [Task List App](https://paweleszczynsky.github.io/to-do-list-react/)
 ## Description website application
 The application allows to prepare a list of tasks to perform. After adding tasks you can interact with them using two buttons. First one green button allows to mark done task. Completed task will be crossed out. Clicking button again will make task not performed. Secound red button deletes task permanently form task list. Application is simple to use and helpful in organizing your days.
 
-![App after mark tasks](https://github.com/PaweLeszczynsky/to-do-list-react/blob/main/readme/preview2.png?raw=true)
+![App after mark tasks](https://github.com/PaweLeszczynsky/to-do-list-react/blob/main/preview2.png?raw=true)
 
 Link to [App video presentation](https://youtu.be/Quk2O5OzMS8)
 ## Used technologies
