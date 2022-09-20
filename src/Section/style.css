@@ -18,3 +18,11 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media (max-width:750px) {
+    .section__header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

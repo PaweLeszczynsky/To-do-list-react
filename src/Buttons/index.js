@@ -5,17 +5,17 @@ const Buttons = ({ tasks, hideDone, toggleHideDone, setAllTasksDone }) => {
         return null;
     };
     return (
-        <div className="section__interactionButtonsContainer">
+        <div className="interactionButtonsContainer">
             <button
                 onClick={toggleHideDone}
-                className="section__tasksInteractionButton"
+                className="interactionButtonsContainer__Button"
             >
                 {hideDone ? "Pokaż ukończone" : "Ukryj ukończone"}
             </button>
             <button
                 onClick={setAllTasksDone}
                 disabled={tasks.every(({ status }) => status)}
-                className="section__tasksInteractionButton">
+                className="interactionButtonsContainer__Button">
                 Ukończ wszystkie
             </button>
         </div>)

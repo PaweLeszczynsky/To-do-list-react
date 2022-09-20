@@ -1,19 +1,4 @@
-.section__header__text {
-    flex-grow: 1;
-}
-
-.section__header {
-    font-size: 20px;
-    font-weight: 600;
-    border-bottom: 1px solid rgb(221, 221, 221);
-    min-width: 100%;
-    padding: 20px;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.section__tasksInteractionButton {
+.interactionButtonsContainer__Button {
     border: none;
     background-color: transparent;
     color: teal;
@@ -22,28 +7,21 @@
     transition: 1s;
 }
 
-.section__tasksInteractionButton--hidden {
+.interactionButtonsContainer__Button--hidden {
     display: none;
 }
 
-.section__tasksInteractionButton:hover {
+.interactionButtonsContainer__Button:hover {
     color: turquoise;
     cursor: pointer;
 }
 
-.section__tasksInteractionButton:disabled {
+.interactionButtonsContainer__Button:disabled {
     color: grey;
 }
 
 @media (max-width:750px) {
-
-    .section__header {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .section__interactionButtonsContainer {
+    .interactionButtonsContainer {
         display: flex;
         flex-direction: column;
         gap: 10px;
