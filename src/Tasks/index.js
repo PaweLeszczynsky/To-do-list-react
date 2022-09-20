@@ -1,31 +1,31 @@
 
 import "./style.css";
 const Tasks = ({ tasks, hideDone, removeTask, toggleTaskStatus }) => (
-    <ul className="section__taskList">
+    <ul className="taskList">
         {tasks.map(task => (
             <li
                 key={task.id}
                 className=
-                {`section__taskListItem 
-                ${hideDone && task.status ? "section__taskListItem--hidden" : ""} 
-                ${task.status ? "section__taskListItem--done" : ""}
+                {`taskList__item 
+                ${hideDone && task.status ? "taskList__item--hidden" : ""} 
+                ${task.status ? "taskList__item--done" : ""}
                 `}
             >
                 <button
                     onClick={() => toggleTaskStatus(task.id)}
-                    className="section__taskList__checkedButton"
+                    className="taskList__checkedButton"
                 >
                     {task.status ?
-                        <ion-icon class="section__taskList__icon" name="checkmark-outline"></ion-icon> :
+                        <ion-icon class="taskList__icon" name="checkmark-outline"></ion-icon> :
                         ""
                     }
                 </button>
                 {task.content}
                 <button
                     onClick={() => removeTask(task.id)}
-                    className="section__taskList__deleteTask"
+                    className="taskList__deleteTask"
                 >
-                    <ion-icon class="section__taskList__icon" name="trash-outline"></ion-icon>
+                    <ion-icon class="taskList__icon" name="trash-outline"></ion-icon>
                 </button>
             </li>
         ))}
