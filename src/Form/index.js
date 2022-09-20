@@ -1,13 +1,16 @@
 import { useState } from "react";
 import "./style.css";
 
-const Form = ({ addNewTask }) => {
+const Form = ({ addNewTask, focusTaskInput }) => {
   const [newTaskContent, setNewTaskContent] = useState("");
   const onInputChange = ({ target }) => { setNewTaskContent(target.value); };
   const onFormSubmit = (event) => {
     event.preventDefault();
-    addNewTask(newTaskContent.trim());
+    if (newTaskContent !== "") {
+      addNewTask(newTaskContent.trim());
+    }
     setNewTaskContent("");
+    focusTaskInput(event);
   };
   return (
     <form

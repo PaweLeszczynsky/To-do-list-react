@@ -42,6 +42,9 @@ function App() {
       }
       ]);
   };
+  const focusTaskInput = (event) => {
+    event.target[0].focus();
+  };
   return (
     <MainContainer>
       <Header
@@ -52,6 +55,7 @@ function App() {
         body={
           <Form
             addNewTask={addNewTask}
+            focusTaskInput={focusTaskInput}
           />}
       />
       <Section
