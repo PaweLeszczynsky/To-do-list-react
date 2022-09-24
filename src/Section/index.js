@@ -1,4 +1,5 @@
 import "./style.css";
+
 const Section = ({ title, extraHeaderContent, body }) => (
     <section className="section">
         <h1 className="section__header">

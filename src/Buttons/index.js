@@ -1,6 +1,6 @@
 import "./style.css";
-const Buttons = ({ tasks, hideDone, toggleHideDone, setAllTasksDone }) => {
 
+const Buttons = ({ tasks, hideDone, toggleHideDone, setAllTasksDone }) => {
     if (tasks.length === 0) {
         return null;
     };
@@ -14,7 +14,7 @@ const Buttons = ({ tasks, hideDone, toggleHideDone, setAllTasksDone }) => {
             </button>
             <button
                 onClick={setAllTasksDone}
-                disabled={tasks.every(({ status }) => status)}
+                disabled={tasks.every(({ done }) => done)}
                 className="interactionButtonsContainer__Button">
                 Ukończ wszystkie
             </button>

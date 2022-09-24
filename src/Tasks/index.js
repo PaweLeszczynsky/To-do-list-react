@@ -1,21 +1,21 @@
-
 import "./style.css";
-const Tasks = ({ tasks, hideDone, removeTask, toggleTaskStatus }) => (
+
+const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
     <ul className="taskList">
         {tasks.map(task => (
             <li
                 key={task.id}
                 className=
                 {`taskList__item 
-                ${hideDone && task.status ? "taskList__item--hidden" : ""} 
-                ${task.status ? "taskList__item--done" : ""}
+                ${hideDone && task.done ? "taskList__item--hidden" : ""} 
+                ${task.done ? "taskList__item--done" : ""}
                 `}
             >
                 <button
-                    onClick={() => toggleTaskStatus(task.id)}
+                    onClick={() => toggleTaskDone(task.id)}
                     className="taskList__checkedButton"
                 >
-                    {task.status ?
+                    {task.done ?
                         <ion-icon class="taskList__icon" name="checkmark-outline"></ion-icon> :
                         ""
                     }
