@@ -28,4 +28,5 @@ const Form = ({ addNewTask, focusTaskInput }) => {
     </form>
   )
 };
+
 export default Form;

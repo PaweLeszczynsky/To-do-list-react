@@ -9,4 +9,5 @@ const Section = ({ title, extraHeaderContent, body }) => (
         {body}
     </section>
 );
+
 export default Section;
