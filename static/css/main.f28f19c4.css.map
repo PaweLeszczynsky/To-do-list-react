@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.f28f19c4.css","mappings":"AAAA,KACE,qBAAsB,CACtB,8BACF,CAEA,iBACE,kBACF,CAEA,KACE,qBACF","sources":["index.css"],"sourcesContent":["html {\n  box-sizing: border-box;\n  font-family: \"Poppins\", sans-serif;\n}\n\n*, ::after, ::before {\n  box-sizing: inherit;\n}\n\nbody{\n  background-color: rgb(221, 221, 221);\n}"],"names":[],"sourceRoot":""}
