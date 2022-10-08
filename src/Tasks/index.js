@@ -1,4 +1,7 @@
-import { StyledList, StyledListItem, StyledDoneButton, StyledDeleteButton, StyledDeleteIcon, StyledCheckmarkIcon } from "./styled";
+import {
+    StyledList, StyledListItem, StyledDoneButton,
+    StyledDeleteButton, StyledDeleteIcon, StyledCheckmarkIcon
+} from "./styled";
 
 const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
     <StyledList>
