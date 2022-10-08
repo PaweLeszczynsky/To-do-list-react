@@ -1,4 +1,3 @@
-import "./style.css";
 import { StyledSection, StyledHeader } from "./styled";
 
 const Section = ({ title, extraHeaderContent, body }) => (
