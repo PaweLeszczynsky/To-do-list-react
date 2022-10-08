@@ -1,24 +1,24 @@
-import "./style.css";
+import { StyledContainer, StyledInteractionButton } from "./styled";
 
 const Buttons = ({ tasks, hideDone, toggleHideDone, setAllTasksDone }) => {
     if (tasks.length === 0) {
         return null;
     };
+    
     return (
-        <div className="interactionButtonsContainer">
-            <button
+        <StyledContainer>
+            <StyledInteractionButton
                 onClick={toggleHideDone}
-                className="interactionButtonsContainer__Button"
             >
                 {hideDone ? "Pokaż ukończone" : "Ukryj ukończone"}
-            </button>
-            <button
+            </StyledInteractionButton>
+            <StyledInteractionButton
                 onClick={setAllTasksDone}
                 disabled={tasks.every(({ done }) => done)}
-                className="interactionButtonsContainer__Button">
+            >
                 Ukończ wszystkie
-            </button>
-        </div>)
+            </StyledInteractionButton>
+        </StyledContainer>)
 };
 
 export default Buttons;
