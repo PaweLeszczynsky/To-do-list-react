@@ -1,36 +1,30 @@
-import "./style.css";
+import { StyledList, StyledListItem, StyledDoneButton, StyledDeleteButton, StyledDeleteIcon, StyledCheckmarkIcon } from "./styled";
 
 const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
-    <ul className="taskList">
+    <StyledList>
         {!!tasks && (
             tasks.map(task => (
-                <li
+                <StyledListItem
                     key={task.id}
-                    className=
-                    {`taskList__item 
-                ${hideDone && task.done ? "taskList__item--hidden" : ""} 
-                ${task.done ? "taskList__item--done" : ""}
-                `}
+                    hidden={hideDone && task.done}
+                    done={task.done}
                 >
-                    <button
+                    <StyledDoneButton
                         onClick={() => toggleTaskDone(task.id)}
-                        className="taskList__checkedButton"
                     >
                         {task.done ?
-                            <ion-icon class="taskList__icon" name="checkmark-outline"></ion-icon> :
-                            ""
+                            <StyledCheckmarkIcon /> : ""
                         }
-                    </button>
+                    </StyledDoneButton>
                     {task.content}
-                    <button
+                    <StyledDeleteButton
                         onClick={() => removeTask(task.id)}
-                        className="taskList__deleteTask"
                     >
-                        <ion-icon class="taskList__icon" name="trash-outline"></ion-icon>
-                    </button>
-                </li>
+                        <StyledDeleteIcon />
+                    </StyledDeleteButton>
+                </StyledListItem>
             )))}
-    </ul>
+    </StyledList>
 );
 
 export default Tasks;
