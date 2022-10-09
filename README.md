@@ -12,10 +12,10 @@ Link to [App video presentation](https://youtu.be/Quk2O5OzMS8)
 ## Used technologies
 
 - HTML
-- CSS (Flexbox, Grid, Media Queries, BEM)
-- JavaScript ES6
+- CSS (Flexbox, Grid, Media Queries)
+- JavaScript ES6 (JSX)
 - Markdown
-- Create React App (Hooks, Handling Events)
+- Create React App (Hooks, Handling Events, Styled Components)
 
 
 ## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
