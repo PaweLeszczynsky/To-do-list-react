@@ -24,11 +24,11 @@ export const StyledListItem = styled.li`
     padding: 10px 10px;
 
     ${({ hidden }) => hidden && css`
-    display: none;
+        display: none;
     `}
 
     ${({ done }) => done && css`
-    text-decoration: line-through;
+        text-decoration: line-through;
     `}
 `;
 
