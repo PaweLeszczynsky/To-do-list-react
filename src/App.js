@@ -8,9 +8,8 @@ import { useState } from "react";
 import { useTasks } from "./useTasks";
 
 function App() {
-
   const [hideDone, setHideDone] = useState(false);
-  const [tasks, removeTask, toggleTaskDone, setAllTasksDone, addNewTask, focusTaskInput] = useTasks();
+  const {tasks, removeTask, toggleTaskDone, setAllTasksDone, addNewTask} = useTasks();
 
   const toggleHideDone = () => {
     if (tasks.some(({ done }) => done)) {
@@ -28,7 +27,6 @@ function App() {
         body={
           <Form
             addNewTask={addNewTask}
-            focusTaskInput={focusTaskInput}
           />}
       />
       <Section

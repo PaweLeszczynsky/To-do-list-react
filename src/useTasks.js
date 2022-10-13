@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 export const useTasks = () => {
-
     const tasksStorage = JSON.parse(localStorage.getItem("tasks")) || [];
     const [tasks, setTasks] = useState(tasksStorage);
+
     useEffect(() => {
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }, [tasks]);
@@ -40,9 +40,5 @@ export const useTasks = () => {
             ]);
     };
 
-    const focusTaskInput = (event) => {
-        event.target[0].focus();
-    };
-
-    return [tasks, removeTask, toggleTaskDone, setAllTasksDone, addNewTask, focusTaskInput];
+    return { tasks, removeTask, toggleTaskDone, setAllTasksDone, addNewTask };
 };
