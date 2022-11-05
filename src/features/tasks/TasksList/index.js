@@ -3,7 +3,7 @@ import {
     StyledDeleteButton, StyledDeleteIcon, StyledCheckmarkIcon
 } from "./styled";
 
-const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
+const TasksList = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
     <StyledList>
         {!!tasks && (
             tasks.map(task => (
@@ -30,4 +30,4 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
     </StyledList>
 );
 
-export default Tasks;
+export default TasksList;
