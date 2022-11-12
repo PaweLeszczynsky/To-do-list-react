@@ -1,33 +1,40 @@
+import { useSelector, useDispatch } from "react-redux";
+import { selectTasks, toggleTaskDone, removeTask } from "../tasksSlice";
 import {
     StyledList, StyledListItem, StyledDoneButton,
     StyledDeleteButton, StyledDeleteIcon, StyledCheckmarkIcon
 } from "./styled";
 
-const TasksList = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
-    <StyledList>
-        {!!tasks && (
-            tasks.map(task => (
-                <StyledListItem
-                    key={task.id}
-                    hidden={hideDone && task.done}
-                    done={task.done}
-                >
-                    <StyledDoneButton
-                        onClick={() => toggleTaskDone(task.id)}
+const TasksList = () => {
+    const { tasks, hideDone } = useSelector(selectTasks);
+    const dispatch = useDispatch();
+
+    return (
+        <StyledList>
+            {!!tasks && (
+                tasks.map(task => (
+                    <StyledListItem
+                        key={task.id}
+                        hidden={hideDone && task.done}
+                        done={task.done}
                     >
-                        {task.done ?
-                            <StyledCheckmarkIcon /> : ""
-                        }
-                    </StyledDoneButton>
-                    {task.content}
-                    <StyledDeleteButton
-                        onClick={() => removeTask(task.id)}
-                    >
-                        <StyledDeleteIcon />
-                    </StyledDeleteButton>
-                </StyledListItem>
-            )))}
-    </StyledList>
-);
+                        <StyledDoneButton
+                            onClick={() => dispatch(toggleTaskDone(task.id))}
+                        >
+                            {task.done ?
+                                <StyledCheckmarkIcon /> : ""
+                            }
+                        </StyledDoneButton>
+                        {task.content}
+                        <StyledDeleteButton
+                            onClick={() => dispatch(removeTask(task.id))}
+                        >
+                            <StyledDeleteIcon />
+                        </StyledDeleteButton>
+                    </StyledListItem>
+                )))}
+        </StyledList>
+    );
+};
 
 export default TasksList;
