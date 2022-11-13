@@ -17,7 +17,8 @@ The application allows to prepare a list of tasks to perform. After adding tasks
 - CSS (Flexbox, Grid, Media Queries)
 - JavaScript ES6 (JSX)
 - Markdown
-- Create React App (Hooks, Handling Events, Styled Components)
+- Create React App (Hooks, Handling Events, Styled Components, Styled Icons)
+- Redux (toolkit, hooks)
 
 
 ## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
