@@ -1,12 +1,17 @@
 import { StyledContainer, StyledInteractionButton } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
-import { selectTasks, toggleHideDone, setAllTasksDone } from "../tasksSlice";
+import {
+    toggleHideDone, setAllTasksDone, selectIsEveryTaskDone,
+    selectHideDone, selectAreTasksEmpty
+} from "../tasksSlice";
 
 const Buttons = () => {
-    const { tasks, hideDone } = useSelector(selectTasks);
+    const hideDone = useSelector(selectHideDone);
+    const allTasksDone = useSelector(selectIsEveryTaskDone);
+    const areTasksEmpty = useSelector(selectAreTasksEmpty);
     const dispatch = useDispatch();
 
-    if (tasks.length === 0) {
+    if (areTasksEmpty) {
         return null;
     };
 
@@ -19,7 +24,7 @@ const Buttons = () => {
             </StyledInteractionButton>
             <StyledInteractionButton
                 onClick={() => { dispatch(setAllTasksDone()) }}
-                disabled={tasks.every(({ done }) => done)}
+                disabled={allTasksDone}
             >
                 Ukończ wszystkie
             </StyledInteractionButton>
