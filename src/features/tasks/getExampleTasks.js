@@ -1,5 +1,5 @@
 export const getExampleTasks = async () => {
-    const response = await fetch("https://raw.githubusercontent.com/PaweLeszczynsky/to-do-list-react/main/src/features/exampleTasks/exampleTasks.json");
+    const response = await fetch("/to-do-list-react/exampleTasks.json");
 
     if (!response.ok) {
         new Error(response.statusText);
