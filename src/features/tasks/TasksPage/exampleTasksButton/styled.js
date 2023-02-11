@@ -9,8 +9,6 @@ export const StyledExampleTasksButton = styled.button`
     transition: 1s;
     display: flex;
 
-
-
     &:hover{
         color: turquoise;
     cursor: pointer;
@@ -18,5 +16,6 @@ export const StyledExampleTasksButton = styled.button`
 
     &:disabled{
         color: grey;
+        cursor: wait;
     }
 `;
