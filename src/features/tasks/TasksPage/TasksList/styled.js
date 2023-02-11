@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { Trash } from '@styled-icons/ionicons-outline';
 import { Checkmark } from '@styled-icons/ionicons-outline';
+import { Link } from "react-router-dom";
 
 export const StyledList = styled.ul`
     list-style: none;
@@ -82,4 +83,10 @@ export const StyledDeleteIcon = styled(Trash, StyledCheckmarkIcon)`
     &:hover{
         transform: scale(1.4);
     }
+`;
+
+export const StyledLink = styled(Link)`
+    color: teal;
+    text-decoration: none;
+    font-weight: 300;
 `;

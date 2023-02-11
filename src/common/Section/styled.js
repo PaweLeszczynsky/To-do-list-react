@@ -8,6 +8,7 @@ export const StyledSection = styled.section`
     align-items: center;
     gap: 20px;
     margin: 0 20px;
+    padding-bottom: 20px;
 `;
 
 export const StyledHeader = styled.header`

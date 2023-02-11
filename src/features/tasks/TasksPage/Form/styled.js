@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
-    margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -13,13 +12,6 @@ export const StyledForm = styled.form`
         gap: 10px;
         flex-direction: column;
     }
-`;
-
-export const StyledInput = styled.input`
-    padding: 10px;
-    border: 2px solid rgb(221, 221, 221);
-    font-weight: 300;
-    flex-grow: 1;
 `;
 
 export const StyledButton = styled.button`
