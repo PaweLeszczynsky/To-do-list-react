@@ -1,10 +1,9 @@
 # Task List App
 ## Preview
-![App after add tasks](https://github.com/PaweLeszczynsky/to-do-list-react/blob/main/preview1.png?raw=true)
 
+![](https://raw.githubusercontent.com/PaweLeszczynsky/to-do-list-react/main/Animation.gif)
 Link to [Task List App](https://paweleszczynsky.github.io/to-do-list-react/)
 
-<!-- Link to [App video presentation](https://youtu.be/Quk2O5OzMS8) -->
 ## Description website application
 The application allows to prepare a list of tasks to perform. After adding tasks you can interact with them using two buttons. First one green button allows to mark done task. Completed task will be crossed out. Clicking button again will make task not performed. Secound red button deletes task permanently form task list. Application is simple to use and helpful in organizing your days.
 
@@ -18,7 +17,8 @@ The application allows to prepare a list of tasks to perform. After adding tasks
 - JavaScript ES6 (JSX)
 - Markdown
 - Create React App (Hooks, Handling Events, Styled Components, Styled Icons)
-- Redux (toolkit, hooks)
+- Redux (toolkit, hooks, saga)
+- React Router
 
 
 ## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
