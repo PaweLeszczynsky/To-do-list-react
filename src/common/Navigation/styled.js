@@ -27,49 +27,48 @@ export const StyledNavListItem = styled.li`
     margin: 0 20px;
     padding: 10px;
     position: relative;
-    border: 5px solid transparent;
+    border: ${({ theme }) => theme.navigation.sizeBorder} solid transparent;
     transition-property: border-bottom, border-left, border-right, border-top, background-color;
     transition-delay: .45s, .15s, .45s, .15s, .5s;
     
     &:hover{
         transition-property: border-bottom, border-left, border-right, border-top, background-color;
         transition-delay: .15s, .45s, .15s, .45s, .4s;
-        transition-duration: 0, 0, 0, 0, .3s;
-        border-bottom: 5px solid azure;
-        border-left: 5px solid azure;
-        border-right: 5px solid azure;
-        border-top: 5px solid azure;
+        border-width: ${({ theme }) => theme.navigation.sizeBorder};
+        border-style: solid;
+        border-bottom-color: azure;
+        border-left-color: azure;
+        border-right-color: azure;
+        border-top-color: azure;
         background-color: rgba(240, 255, 255, 0.4);
     }
-    &::before:not(:hover) {
-    animation: underlineBack1, underlineBack2, underlineBack3, underlineBack4;
-    animation-delay: 0s, .15s, .3s, .45s;
-    animation-duration: .15s, .15s, .15s, .15s;
-    }
+
     &::before{
+        opacity:${({ opacityNav }) => opacityNav};
         display: block;
         content: "";
         position: absolute;
-        height: 5px;
-        width: 5px;
+        width: ${({ theme }) => theme.navigation.sizeBorder};
+        height: ${({ theme }) => theme.navigation.sizeBorder};
         background-color: transparent;
         box-shadow: 0px 0px 2px transparent;
-        bottom: ${props => props.theme.navigation.offsetBorder};
-        right: ${props => props.theme.navigation.offsetBorder};
+        bottom: ${({ theme }) => theme.navigation.offsetBorder};
+        right: ${({ theme }) => theme.navigation.offsetBorder};
         animation: underlineBack1, underlineBack2, underlineBack3, underlineBack4;
         animation-delay: 0s, .15s, .3s, .45s;
         animation-duration: .15s, .15s, .15s, .15s;
     }
     &::after{
+        opacity:${({ opacityNav }) => opacityNav};
         display: block;
         content: "";
         position: absolute;
-        height: 5px;
-        width: 5px;
+        width: ${({ theme }) => theme.navigation.sizeBorder};
+        height: ${({ theme }) => theme.navigation.sizeBorder};
         background-color: transparent;
         box-shadow: 0px 0px 2px transparent;
-        bottom: ${props => props.theme.navigation.offsetBorder};
-        right: ${props => props.theme.navigation.offsetBorder};
+        bottom: ${({ theme }) => theme.navigation.offsetBorder};
+        right: ${({ theme }) => theme.navigation.offsetBorder};
         animation: underlineBack5, underlineBack6, underlineBack7, underlineBack8;
         animation-delay: 0s, .15s, .3s, .45s;
         animation-duration: .15s, .15s, .15s, .15s;
@@ -80,24 +79,19 @@ export const StyledNavListItem = styled.li`
         animation-duration: .15s, .15s, .15s, .15s;
     }
     &:hover:before{
-        animation: underline5, underline6, underline7, underline8 forwards;
+        animation: underline5, underline6, underline7, underline8;
         animation-delay: 0s, .15s, .3s, .45s;
         animation-duration: .15s, .15s, .15s, .15s;
     }
-    @keyframes underline1 {
+@keyframes underline1 {
     0% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        right: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        bottom: ${props => props.theme.navigation.offsetBorder};
+
     }
 
     100% {
-        right: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        bottom: ${props => props.theme.navigation.offsetBorder};
-        width: 100%;
+        width: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
     }
@@ -105,19 +99,14 @@ export const StyledNavListItem = styled.li`
 
 @keyframes underline2 {
     0% {
+        left: ${({ theme }) => theme.navigation.offsetBorder};
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        bottom: ${props => props.theme.navigation.offsetBorder};
-        width: 100%;
+        width: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
     }
 
     100% {
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        bottom: ${props => props.theme.navigation.offsetBorder};
-        width: 5px;
+        left: ${({ theme }) => theme.navigation.offsetBorder};
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
     }
@@ -127,16 +116,14 @@ export const StyledNavListItem = styled.li`
     0% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        left: ${props => props.theme.navigation.offsetBorder};
-        width: 5px;
+        left: ${({ theme }) => theme.navigation.offsetBorder};
     }
 
     100% {
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 100%;
+        left: ${({ theme }) => theme.navigation.offsetBorder};
+        height: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        width: 5px;
     }
 }
 
@@ -144,14 +131,15 @@ export const StyledNavListItem = styled.li`
     0% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 100%;
+        left: ${({ theme }) => theme.navigation.offsetBorder};
+        height: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
     }
 
     100% {
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        top: ${props => props.theme.navigation.offsetBorder};
+        left: ${({ theme }) => theme.navigation.offsetBorder};
+        bottom: 100%;
+        background-color: azure;
+        box-shadow: 0px 0px 4px azure;
     }
 }
 
@@ -159,16 +147,12 @@ export const StyledNavListItem = styled.li`
     0% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        right: ${props => props.theme.navigation.offsetBorder};
-        width: 5px;
     }
 
     100% {
-        right: ${props => props.theme.navigation.offsetBorder};
-        height: 100%;
+        height: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        width: 5px;
     }
 }
 
@@ -176,14 +160,11 @@ export const StyledNavListItem = styled.li`
     0% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        right: ${props => props.theme.navigation.offsetBorder};
-        height: 100%;
+        height: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
     }
 
     100% {
-        right: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        bottom: calc(100% - ${props => props.theme.navigation.offsetBorder});
+        bottom: 100%;
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
     }
@@ -193,15 +174,13 @@ export const StyledNavListItem = styled.li`
     0% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        right: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        top: ${props => props.theme.navigation.offsetBorder};
+        right: ${({ theme }) => theme.navigation.offsetBorder};
+        top: ${({ theme }) => theme.navigation.offsetBorder};
     }
 
     100% {
-        height: 5px;
-        top: ${props => props.theme.navigation.offsetBorder};
-        width: 100%;
+        top: ${({ theme }) => theme.navigation.offsetBorder};
+        width: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
     }
@@ -211,25 +190,23 @@ export const StyledNavListItem = styled.li`
     0% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        top: ${props => props.theme.navigation.offsetBorder};
-        width: 100%;
+        left: ${({ theme }) => theme.navigation.offsetBorder};
+        top: ${({ theme }) => theme.navigation.offsetBorder};
+        width: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
     }
 
     100% {
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        top: ${props => props.theme.navigation.offsetBorder};
-        width: 5px;
+        left: ${({ theme }) => theme.navigation.offsetBorder};
+        top: ${({ theme }) => theme.navigation.offsetBorder};
+        background-color: azure;
+        box-shadow: 0px 0px 4px azure;
     }
 }
 
 @keyframes underlineBack1 {
     0% {
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        top: ${props => props.theme.navigation.offsetBorder};
+        left: ${({ theme }) => theme.navigation.offsetBorder};
+        top: ${({ theme }) => theme.navigation.offsetBorder};
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
 
@@ -238,56 +215,48 @@ export const StyledNavListItem = styled.li`
     100% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 100%;
-        top: ${props => props.theme.navigation.offsetBorder};
+        left: ${({ theme }) => theme.navigation.offsetBorder};
+        height: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
+        top: ${({ theme }) => theme.navigation.offsetBorder};
     }
 }
 
 @keyframes underlineBack2 {
     0% {
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: calc(100% - ${props => props.theme.navigation.offsetBorder});
+        left: ${({ theme }) => theme.navigation.offsetBorder};
+        height: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        width: 5px;
-
     }
 
     100% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        bottom: ${props => props.theme.navigation.offsetBorder};
-        left: ${props => props.theme.navigation.offsetBorder};
-        width: 5px;
+        bottom: ${({ theme }) => theme.navigation.offsetBorder};
+        left: ${({ theme }) => theme.navigation.offsetBorder};
     }
 }
 
 @keyframes underlineBack3 {
     0% {
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        bottom: ${props => props.theme.navigation.offsetBorder};
-        width: 5px;
+        left: ${({ theme }) => theme.navigation.offsetBorder};
+        bottom: ${({ theme }) => theme.navigation.offsetBorder};
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-
     }
 
     100% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        bottom: ${props => props.theme.navigation.offsetBorder};
-        width: 100%;
-
+        left: ${({ theme }) => theme.navigation.offsetBorder};
+        bottom: ${({ theme }) => theme.navigation.offsetBorder};
+        width: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
     }
 }
 
 @keyframes underlineBack4 {
     0% {
-        width: 100%;
+        width: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
     }
@@ -300,10 +269,8 @@ export const StyledNavListItem = styled.li`
 
 @keyframes underlineBack5 {
     0% {
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        top: ${props => props.theme.navigation.offsetBorder};
-        width: 5px;
+        left: ${({ theme }) => theme.navigation.offsetBorder};
+        top: ${({ theme }) => theme.navigation.offsetBorder};
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
     }
@@ -311,18 +278,16 @@ export const StyledNavListItem = styled.li`
     100% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        left: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        top: ${props => props.theme.navigation.offsetBorder};
-        width: 100%;
+        left: ${({ theme }) => theme.navigation.offsetBorder};
+        top: ${({ theme }) => theme.navigation.offsetBorder};
+        width: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
     }
 }
 
 @keyframes underlineBack6 {
     0% {
-        height: 5px;
-        top: ${props => props.theme.navigation.offsetBorder};
-        width: 100%;
+        top: ${({ theme }) => theme.navigation.offsetBorder};
+        width: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
     }
@@ -330,17 +295,15 @@ export const StyledNavListItem = styled.li`
     100% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        right: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        top: ${props => props.theme.navigation.offsetBorder};
+        right: ${({ theme }) => theme.navigation.offsetBorder};
+        top: ${({ theme }) => theme.navigation.offsetBorder};
     }
 }
 
 @keyframes underlineBack7 {
     0% {
-        right: ${props => props.theme.navigation.offsetBorder};
-        height: 5px;
-        bottom: calc(100% - ${props => props.theme.navigation.offsetBorder});
+        right: ${({ theme }) => theme.navigation.offsetBorder};
+        bottom: 100%;
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
 
@@ -349,27 +312,23 @@ export const StyledNavListItem = styled.li`
     100% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        right: ${props => props.theme.navigation.offsetBorder};
-        height: 100%;
-
+        right: ${({ theme }) => theme.navigation.offsetBorder};
+        height: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
     }
 }
 
 @keyframes underlineBack8 {
     0% {
-        right: ${props => props.theme.navigation.offsetBorder};
-        height: 100%;
+        right: ${({ theme }) => theme.navigation.offsetBorder};
+        height: calc(100% - (${({ theme }) => theme.navigation.offsetBorder}) * 2);
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        width: 5px;
-
     }
 
     100% {
         background-color: azure;
         box-shadow: 0px 0px 4px azure;
-        right: ${props => props.theme.navigation.offsetBorder};
-        width: 5px;
+        right: ${({ theme }) => theme.navigation.offsetBorder};
     }
 }
 `;

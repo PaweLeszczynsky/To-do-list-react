@@ -1,5 +1,6 @@
 export const theme = {
     navigation: {
-        offsetBorder: "-5px",
+        offsetBorder: "-4px",
+        sizeBorder: "4px",
     }
 }
