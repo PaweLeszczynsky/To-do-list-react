@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 5fr auto;
     justify-content: space-between;
     min-width: 100%;
     padding: 0 20px;
@@ -10,7 +10,8 @@ export const StyledForm = styled.form`
 
     @media (max-width:750px) {
         gap: 10px;
-        flex-direction: column;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 `;
 
