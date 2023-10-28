@@ -1,4 +1,4 @@
-import { StyledInput } from "../../Input";
+import { StyledInput } from "../../Input/styled";
 import searchQueryParamsName from "../searchQueryParamsName";
 import { useQueryParameter, useReplaceQueryParameter } from "./queryParameters";
 import { StyledInputContainer } from "./styled";

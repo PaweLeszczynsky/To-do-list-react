@@ -8,6 +8,8 @@ export const StyledExampleTasksButton = styled.button`
     font-size: 17px;
     transition: 1s;
     display: flex;
+    padding: 0px;
+    text-align: left;
 
     &:hover{
         color: turquoise;
